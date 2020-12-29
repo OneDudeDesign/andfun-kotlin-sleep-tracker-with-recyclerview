@@ -16,12 +16,33 @@
 
 package com.example.android.trackmysleepquality.sleeptracker
 
-// TODO (02) Create SleepNightAdapter class and extend it
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.android.trackmysleepquality.TextItemViewHolder
+import com.example.android.trackmysleepquality.database.SleepNight
+
+
+class SleepNightAdapter : RecyclerView.Adapter<TextItemViewHolder>(){
+    var data = listOf<SleepNight>()
+
+    override fun getItemCount() = data.size
+
+    override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
+        val item = data[position]
+        holder.textView.text = item.sleepQuality.toString()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
+        TODO("Not yet implemented")
+    }
+}
+
+// done (02) Create SleepNightAdapter class and extend it
 // from RecyclerView.Adapter<TextItemViewHolder>
 
-// TODO (03) Create a variable, data, that holds a list of SleepNight.
+// done (03) Create a variable, data, that holds a list of SleepNight.
 
-// TODO (04) Override getItemCount() to return the total number of items in the data set.
+// done (04) Override getItemCount() to return the total number of items in the data set.
 
 // TODO (05) Override onBindViewHolder() and have it update the contents of the
 // ViewHolder to reflect the item at the given position.
